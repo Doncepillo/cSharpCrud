@@ -33,16 +33,16 @@
             this.lbRut = new System.Windows.Forms.Label();
             this.lbFormaPago = new System.Windows.Forms.Label();
             this.lbIngreso = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtRut = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.dtIngreso = new System.Windows.Forms.DateTimePicker();
             this.cbxFormaPago = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvClientes = new System.Windows.Forms.DataGridView();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAction = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.SuspendLayout();
             // 
             // lbNombre
@@ -95,13 +95,15 @@
             this.lbIngreso.TabIndex = 3;
             this.lbIngreso.Text = "Fecha Ingreso:";
             // 
-            // textBox1
+            // txtRut
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(59, 54);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(174, 24);
-            this.textBox1.TabIndex = 5;
+            this.txtRut.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRut.Location = new System.Drawing.Point(59, 54);
+            this.txtRut.Name = "txtRut";
+            this.txtRut.Size = new System.Drawing.Size(174, 24);
+            this.txtRut.TabIndex = 5;
+            this.txtRut.KeyUp += new System.Windows.Forms.KeyEventHandler(this.formateaRut);
+            this.txtRut.Validating += new System.ComponentModel.CancelEventHandler(this.validaRut);
             // 
             // textBox2
             // 
@@ -139,13 +141,13 @@
             this.cbxFormaPago.Size = new System.Drawing.Size(299, 26);
             this.cbxFormaPago.TabIndex = 9;
             // 
-            // dataGridView1
+            // dgvClientes
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(37, 272);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(626, 296);
-            this.dataGridView1.TabIndex = 12;
+            this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClientes.Location = new System.Drawing.Point(37, 272);
+            this.dgvClientes.Name = "dgvClientes";
+            this.dgvClientes.Size = new System.Drawing.Size(626, 296);
+            this.dgvClientes.TabIndex = 12;
             // 
             // btnSearch
             // 
@@ -191,14 +193,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(704, 580);
             this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvClientes);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAction);
             this.Controls.Add(this.cbxFormaPago);
             this.Controls.Add(this.dtIngreso);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtRut);
             this.Controls.Add(this.lbFormaPago);
             this.Controls.Add(this.lbIngreso);
             this.Controls.Add(this.lbRut);
@@ -207,7 +209,7 @@
             this.Name = "Administracion";
             this.Text = "Administracion";
             this.Load += new System.EventHandler(this.cargaRegistros);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -220,14 +222,14 @@
         private System.Windows.Forms.Label lbRut;
         private System.Windows.Forms.Label lbFormaPago;
         private System.Windows.Forms.Label lbIngreso;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtRut;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.DateTimePicker dtIngreso;
         private System.Windows.Forms.ComboBox cbxFormaPago;
         private System.Windows.Forms.Button btnAction;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvClientes;
         private System.Windows.Forms.Button btnSearch;
     }
 }
