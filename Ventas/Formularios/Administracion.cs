@@ -16,21 +16,18 @@ namespace Ventas.Cliente
     {
         string stringConection = ConfigurationManager.ConnectionStrings["stringConexionVentas"].ConnectionString;
 
-        Negocio.Cliente cliente;
-        Negocio.FormaPago formaPago;
-
+        Negocio.Cliente cliente     = new Negocio.Cliente();
+        Negocio.FormaPago formaPago = new Negocio.FormaPago();
+    
         public Administracion()
         {
             InitializeComponent();
-            cliente = new Negocio.Cliente();
-            formaPago = new Negocio.FormaPago();
+            
         }
 
         private void cargaRegistros(object sender, EventArgs e)
         { 
-          
-            cargarFormaPago();
-            cargarGrillaClientes();
+           
         }
         private void cargarGrillaClientes() {
             using (SqlConnection conn = new SqlConnection(stringConection))
